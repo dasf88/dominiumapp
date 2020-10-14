@@ -1,65 +1,46 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(DominiumApp());
 }
 
-class MyApp extends StatelessWidget {
+class DominiumApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Dominium',
       theme: ThemeData(
-        primarySwatch: Colors.blueGrey,
+        primarySwatch: Colors.blueAccent[900],
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MyHomePage(title: 'Login'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
-  final String title;
-
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              '',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
-      ),
+      home: Scaffold(
+    appBar: AppBar(
+    title: Text('Login'),
+    ),
+    body: Center(
+    child: Column(
+    mainAxisAlignment: MainAxisAlignment.center,
+    children: <Widget>[
+    Text(
+     'Usuario:',
+    ),
+    TextField(
+    decoration: InputDecoration( border: OutlineInputBorder(),
+    labelText: 'Nombre Usuario'),
+    ),
+    Text(
+    'Contraseña:',
+    ),
+    TextField(
+    obscureText: true,
+    obscuringCharacter: '*',
+    decoration: InputDecoration( border: OutlineInputBorder(),
+    labelText: 'Contraseña del Usuario'),
+    ),
+    ],
+    ),
+    ),
+    ),
     );
   }
 }
