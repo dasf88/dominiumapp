@@ -1,46 +1,42 @@
+import 'package:dominium_app/constrant.dart';
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(DominiumApp());
-}
+void main() => runApp(MyApp());
 
-class DominiumApp extends StatelessWidget {
+class MyApp extends StatelessWidget
+{
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Dominium',
-      theme: ThemeData(
-        primarySwatch: Colors.blueAccent[900],
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
-      home: Scaffold(
-    appBar: AppBar(
-    title: Text('Login'),
-    ),
-    body: Center(
-    child: Column(
-    mainAxisAlignment: MainAxisAlignment.center,
-    children: <Widget>[
-    Text(
-     'Usuario:',
-    ),
-    TextField(
-    decoration: InputDecoration( border: OutlineInputBorder(),
-    labelText: 'Nombre Usuario'),
-    ),
-    Text(
-    'Contraseña:',
-    ),
-    TextField(
-    obscureText: true,
-    obscuringCharacter: '*',
-    decoration: InputDecoration( border: OutlineInputBorder(),
-    labelText: 'Contraseña del Usuario'),
-    ),
-    ],
-    ),
-    ),
-    ),
+   return MaterialApp(
+     title: "Dominium",
+     theme: ThemeData(
+       primaryColor: kPrimaryColor,
+     ),
+     home: HomePage(),
+   );
+  }
+}
+
+class HomePage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: kPrimaryColor,
+      body: Column(
+        children: [
+          Expanded(
+              child: Container(
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage('Imagenes/DominiunLogo.png'),
+                  )
+                ),
+
+          ))
+        ],
+      )
     );
   }
 }
+
+
