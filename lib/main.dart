@@ -18,6 +18,7 @@ class MyApp extends StatelessWidget {
             ),
             button: TextStyle(
               color: Colors.white,
+              fontSize: 22,
             )),
         inputDecorationTheme: InputDecorationTheme(
           enabledBorder: UnderlineInputBorder(

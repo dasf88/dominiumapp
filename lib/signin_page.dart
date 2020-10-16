@@ -1,5 +1,6 @@
 import 'package:dominium_app/constrant.dart';
 import 'package:flutter/material.dart';
+import 'SignUpPage.dart';
 
 class SignInPage extends StatelessWidget {
   @override
@@ -23,24 +24,6 @@ class SignInPage extends StatelessWidget {
                 child: Column(
                   children: [
                     Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            "Sign In",
-                            style: Theme.of(context)
-                                .textTheme
-                                .headline5
-                                .copyWith(fontWeight: FontWeight.bold),
-                          ),
-                          Text(
-                            "Sign Up",
-                            style: Theme.of(context)
-                                .textTheme
-                                .button
-                                .copyWith(fontWeight: FontWeight.bold),
-                          ),
-                        ]),
-                    Row(
                       children: [
                         Padding(
                           padding: const EdgeInsets.only(
@@ -56,7 +39,9 @@ class SignInPage extends StatelessWidget {
                           child: TextField(
                             decoration: InputDecoration(
                               hintText: "E-mail",
+                              hintStyle: TextStyle(color: Colors.white),
                             ),
+                            style: TextStyle(color: Colors.white),
                           ),
                         )
                       ],
@@ -77,26 +62,97 @@ class SignInPage extends StatelessWidget {
                           child: TextField(
                             decoration: InputDecoration(
                               hintText: "Password",
+                              hintStyle: TextStyle(color: Colors.white),
+                            ),
+                            style: TextStyle(color: Colors.white),
                             ),
                           ),
-                        ),
                       ],
                     ),
                     Spacer(),
-                    Padding(
-                      padding: const EdgeInsets.only(bottom: 90),
-                      child: Container(
-                        padding: const EdgeInsets.all(16),
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          color: Colors.white,
+                    Expanded(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children:[
+                        FittedBox(
+                          child: GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) {
+                                    return SignInPage();
+                                  },
+                                ),
+                              );
+                            },
+                            child: Padding(
+                              padding: const EdgeInsets.only(bottom: 90),
+                              child: Container(
+                                padding: EdgeInsets.symmetric(
+                                    horizontal: 26, vertical: 16),
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(30),
+                                  color: Colors.white,
+                                ),
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Text(
+                                      "Login",
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        color: kPrimaryColor,
+                                        fontSize: 20,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
                         ),
-                        child: Icon(
-                          Icons.arrow_forward,
-                          color: kPrimaryColor,
+                        FittedBox(
+                          child: GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) {
+                                    return SignUpPage();
+                                  },
+                                ),
+                              );
+                            },
+                            child: Padding(
+                              padding: const EdgeInsets.only(bottom: 90),
+                              child: Container(
+                                padding: EdgeInsets.symmetric(
+                                    horizontal: 26, vertical: 16),
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(30),
+                                  color: Colors.white,
+                                ),
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Text(
+                                      "Sign Up",
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        color: kPrimaryColor,
+                                        fontSize: 20,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
                         ),
+                            ],
                       ),
-                    )
+                    ),
                   ],
                 ),
               ),
@@ -105,3 +161,4 @@ class SignInPage extends StatelessWidget {
         ));
   }
 }
+
