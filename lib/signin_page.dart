@@ -1,5 +1,6 @@
 import 'package:dominium_app/constrant.dart';
 import 'package:flutter/material.dart';
+import 'HomePage.dart';
 import 'SignUpPage.dart';
 
 class SignInPage extends StatelessWidget {
@@ -81,7 +82,7 @@ class SignInPage extends StatelessWidget {
                                 context,
                                 MaterialPageRoute(
                                   builder: (context) {
-                                    return SignInPage();
+                                    return HomePage();
                                   },
                                 ),
                               );

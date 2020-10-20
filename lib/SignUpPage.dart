@@ -31,6 +31,29 @@ class SignUpPage extends StatelessWidget {
                             left: 5,
                           ),
                           child: Icon(
+                            Icons.person,
+                            color: Colors.white,
+                          ),
+                        ),
+                        Expanded(
+                          child: TextField(
+                            decoration: InputDecoration(
+                              hintText: "Full Name",
+                              hintStyle: TextStyle(color: Colors.white),
+                            ),
+                            style: TextStyle(color: Colors.white),
+                          ),
+                        ),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(
+                            right: 5,
+                            left: 5,
+                          ),
+                          child: Icon(
                             Icons.email,
                             color: Colors.white,
                           ),
@@ -69,7 +92,52 @@ class SignUpPage extends StatelessWidget {
                         ),
                       ],
                     ),
-                    Spacer(),
+                    Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(
+                            right: 5,
+                            left: 5,
+                          ),
+                          child: Icon(
+                            Icons.home,
+                            color: Colors.white,
+                          ),
+                        ),
+                        Expanded(
+                          child: TextField(
+                            decoration: InputDecoration(
+                              hintText: "Address",
+                              hintStyle: TextStyle(color: Colors.white),
+                            ),
+                            style: TextStyle(color: Colors.white),
+                          ),
+                        ),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(
+                            right: 5,
+                            left: 5,
+                          ),
+                          child: Icon(
+                            Icons.phone,
+                            color: Colors.white,
+                          ),
+                        ),
+                        Expanded(
+                          child: TextField(
+                            decoration: InputDecoration(
+                              hintText: "Phone number",
+                              hintStyle: TextStyle(color: Colors.white),
+                            ),
+                            style: TextStyle(color: Colors.white),
+                          ),
+                        ),
+                      ],
+                    ),
                     Expanded(
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -80,7 +148,7 @@ class SignUpPage extends StatelessWidget {
                                 Navigator.pop(context);
                               },
                               child: Padding(
-                                padding: const EdgeInsets.only(bottom: 90),
+                                padding: const EdgeInsets.only(bottom: 90, top:20,),
                                 child: Container(
                                   padding: EdgeInsets.symmetric(
                                       horizontal: 26, vertical: 16),
