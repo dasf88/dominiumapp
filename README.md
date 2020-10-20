@@ -1,4 +1,4 @@
-# dominium_app
+# Dominium App
 
 Dominium app para manejo y administracion de condominios y residenciales
 
